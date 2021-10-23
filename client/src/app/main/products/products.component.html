@@ -1,0 +1,13 @@
+<h3>Products</h3>
+
+<div *ngIf="(products$ | async)?.length; else noproduct">
+  <ul>
+    <li *ngFor="let product of (products$ | async)">
+      {{product.name}}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noproduct>
+  <p>No product found.</p>
+</ng-template>
